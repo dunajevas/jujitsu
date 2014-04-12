@@ -129,7 +129,7 @@ library(ggplot2)
 qplot(x = carat, y = price, color = cut, data = diamonds)
 ```
 
-![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6.png) 
+![plot of chunk unnamed-chunk-6](assets/fig/unnamed-chunk-6.png) 
 
 
 
@@ -143,7 +143,7 @@ library(ggthemes)
 qplot(x = carat, y = price, color = cut, data = diamonds) + theme_gdocs()
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7.png) 
+![plot of chunk unnamed-chunk-7](assets/fig/unnamed-chunk-7.png) 
 
 ```r
 # theme_bw(), theme_economist(), theme_tufte(), theme_wsj(), etc
@@ -267,7 +267,7 @@ print(xtable(df), type = "html")
 ```
 
 <!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
-<!-- Sat Apr 12 13:16:59 2014 -->
+<!-- Sat Apr 12 13:51:48 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> city </TH> <TH> 2013 </TH> <TH> 2014 </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1000.00 </TD> <TD align="right"> 1400.00 </TD> </TR>
@@ -288,7 +288,7 @@ xtable(mf)
 ```
 
 <!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
-<!-- Sat Apr 12 12:26:02 2014 -->
+<!-- Sat Apr 12 13:51:48 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> city </TH> <TH> variable </TH> <TH> value </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD> 2013 </TD> <TD align="right"> 1000.00 </TD> </TR>
@@ -303,7 +303,7 @@ xtable(cmf)
 ```
 
 <!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
-<!-- Sat Apr 12 12:26:02 2014 -->
+<!-- Sat Apr 12 13:51:48 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> city </TH> <TH> 2013 </TH> <TH> 2014 </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1000.00 </TD> <TD align="right"> 1400.00 </TD> </TR>
@@ -324,7 +324,7 @@ xtable(smf)
 ```
 
 <!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
-<!-- Sat Apr 12 13:16:59 2014 -->
+<!-- Sat Apr 12 13:51:48 2014 -->
 <TABLE border=1>
 <TR> <TH>  </TH> <TH> city </TH> <TH> maxval </TH>  </TR>
   <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1400.00 </TD> </TR>
@@ -443,7 +443,7 @@ qplot(x = Timestamp, y = SpotPrice, data = d, geom = "step") + facet_grid(Produc
     AvailabilityZone, scales = "free")
 ```
 
-![plot of chunk unnamed-chunk-21](figure/unnamed-chunk-21.png) 
+![plot of chunk unnamed-chunk-21](assets/fig/unnamed-chunk-21.png) 
 
 
 ---
@@ -457,7 +457,7 @@ heart <- function(t) {
 qplot(data = heart(seq(0, 2 * pi, length = 100)), x = x, y = y, geom = "polygon")
 ```
 
-![plot of chunk unnamed-chunk-22](figure/unnamed-chunk-22.png) 
+![plot of chunk unnamed-chunk-22](assets/fig/unnamed-chunk-22.png) 
 
 
 
