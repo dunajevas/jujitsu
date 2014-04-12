@@ -353,7 +353,7 @@ pre code {
 
 .title-slide {
   background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-  background-image:url(file:../../../../backgrounds/vader_logo_1920x1080.jpg);
+  background-image:url(https://raw.githubusercontent.com/dunajevas/jujitsu/master/backgrounds/vader_logo_1920x1080.jpg);
   /* background-image:url(http://goo.gl/EpXln); */
 }
 
@@ -378,7 +378,7 @@ pre code {
 
 .part1-slide {
   background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-  background-image:url(file:../../../../backgrounds/fb_big.jpg);
+  background-image:url(https://raw.githubusercontent.com/dunajevas/jujitsu/master/backgrounds/fb_big.jpg);
   background-repeat:no-repeat;
   background-size:170%;
   background-position:30% 30%; 
@@ -413,7 +413,7 @@ pre code {
 
 .part2-slide {
   background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-  background-image:url(file:../../../../backgrounds/sloth.jpg);
+  background-image:url(https://raw.githubusercontent.com/dunajevas/jujitsu/master/backgrounds/sloth.jpg);
   background-repeat:no-repeat;
   background-size:110%;
   background-position:70% 80%; 
@@ -452,7 +452,7 @@ pre code {
 
 .part3-slide {
   background-color: #CBE7A5; /* #EDE0CF; ; #CA9F9D*/
-  background-image:url(file:../../../../backgrounds/part3.jpeg);
+  background-image:url(https://raw.githubusercontent.com/dunajevas/jujitsu/master/backgrounds/part3.jpeg);
   background-repeat:no-repeat;
   background-size:110%;
   background-position:30% 30%; 
