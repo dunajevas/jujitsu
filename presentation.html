@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Introduction to Data Jujitsu in R</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Introduction to Data Jujitsu in R">
+  <meta name="author" content="Edgaras Dunajevas">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Introduction to Data Jujitsu in R</h1>
+    <h2></h2>
+    <p>Edgaras Dunajevas<br/>Adform</p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Why R?</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>  </br> 
+</p>
+
+<h2>Jujitsu</h2>
+
+<h3>Graphics + Modelling + Data Munging</h3>
+
+<p><a href="http://simplystatistics.org/2013/12/30/some-things-r-can-do-you-might-not-be-aware-of/">http://simplystatistics.org/2013/12/30/some-things-r-can-do-you-might-not-be-aware-of/</a></p>
+
+<h3>Also, <code>Hello World</code> is easy</h3>
+
+<pre><code class="r">print(&quot;Hello World&quot;)
+</code></pre>
+
+<pre><code>## [1] &quot;Hello World&quot;
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>What is R?</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>R is a free software programming language and software environment for statistical computing and graphics</li>
+<li>S was created by John Chambers while at Bell Labs 1976</li>
+<li>R was created by Ross Ihaka and Robert Gentleman 1993</li>
+</ul>
+
+<p><img src="backgrounds/ross.png" alt="alt text" title="Title"></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Main data types</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Vectors</li>
+<li>Matrices</li>
+<li>Data frames</li>
+<li>Lists</li>
+</ul>
+
+<pre><code class="r">a &lt;- 601:609
+b &lt;- letters[1:9]
+m &lt;- matrix(a, nrow = 3)
+df &lt;- data.frame(a, b)
+l &lt;- list(a, b, m, df)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Some general stuff</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>good place to start <a href="http://tryr.codeschool.com">http://tryr.codeschool.com</a></li>
+<li>good place to further <a href="http://adv-r.had.co.nz">http://adv-r.had.co.nz</a></li>
+<li>good place to catch up <a href="http://www.r-bloggers.com">http://www.r-bloggers.com</a></li>
+<li>case study/introduction book &quot;Machine Learning for Hackers&quot; By Drew Conway, John Myles White</li>
+<li>general book &quot;The Art of R Programming&quot; by Norman Matloff</li>
+<li>data analysis course by Jeff Leek <a href="https://www.coursera.org/course/dataanalysis">https://www.coursera.org/course/dataanalysis</a></li>
+<li>statistical learning course by Trevor Hastie &amp; Robert Tibshirani<br>
+<a href="http://online.stanford.edu/course/statistical-learning-winter-2014">http://online.stanford.edu/course/statistical-learning-winter-2014</a></li>
+<li>What can you do - CRAN task views <a href="http://cran.r-project.org/web/views/">http://cran.r-project.org/web/views/</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>R and others</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='480' src='backgrounds/lang.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-6" style="background:;">
+  <hgroup>
+    <h2>Install</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>base R <a href="http://cran.rstudio.com/">http://cran.rstudio.com/</a></li>
+<li>RStudio <a href="https://www.rstudio.com/">https://www.rstudio.com/</a> (optional)</li>
+<li>install additional libraries, load, get help and examples</li>
+</ul>
+
+<pre><code class="r">install.packages(&quot;mcmc&quot;)
+library(mcmc)
+?metrop
+example(&quot;metrop&quot;)
+</code></pre>
+
+<ul>
+<li>Some packages have vignettes which are good source of information</li>
+</ul>
+
+<pre><code class="r">vignette(&quot;package name&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-7" style="background:;">
+  <hgroup>
+    <h2>RStudio</h2>
+  </hgroup>
+  <article data-timings="">
+    <div style='text-align: center;'>
+    <img height='480' src='backgrounds/metropolis.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="part1-slide" id="slide-8" style="background:;">
+  <hgroup>
+    <h2>Graphs</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-9" style="background:;">
+  <hgroup>
+    <h2>Two things you should know</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>base <code>plot</code> has methods for many objects, e.g. <code>plot(lm(y ~ x1 + x2))</code></li>
+<li><code>qplot</code> from <code>ggplot2</code> is easier to use for more advanced graphics (panels, coloring, smoothing, statistics, legends, themes)</li>
+</ul>
+
+<pre><code class="r">plot(x = diamonds$carat, y = diamonds$price, col = diamonds$cut)
+library(ggplot2)
+qplot(x = carat, y = price, color = cut, data = diamonds)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-6.png" alt="plot of chunk unnamed-chunk-6"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-10" style="background:;">
+  <hgroup>
+    <h2>I don&#39;t like how it looks...</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(ggthemes)
+qplot(x = carat, y = price, color = cut, data = diamonds) + theme_gdocs()
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-7.png" alt="plot of chunk unnamed-chunk-7"> </p>
+
+<pre><code class="r"># theme_bw(), theme_economist(), theme_tufte(), theme_wsj(), etc
+</code></pre>
+
+<ul>
+<li><a href="http://ggplot2.org/book/">book</a></li>
+<li><a href="http://docs.ggplot2.org/current/">documentation</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="part3-slide" id="slide-11" style="background:;">
+  <hgroup>
+    <h2>Modeling</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-12" style="background:;">
+  <hgroup>
+    <h2>Formulae</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">class(y ~ x1 + x2)
+</code></pre>
+
+<pre><code>## [1] &quot;formula&quot;
+</code></pre>
+
+<pre><code class="r">y ~ log(x1)  # transform
+y ~ x1 - 1  # no intercept
+y ~ x1:x2  # interaction
+y ~ x1 * x2  # ~ x1 + x2 + x1:x2
+y ~ x + I(x^2)  # raise to the power of something
+y ~ poly(x, degree = 3, raw = FALSE)  # x + I(x^2) + I(x^3) 
+y ~ polym(x1, x2, degree = 3, raw = FALSE)  # multivariable polynomial
+y ~ x1 + x2 | e  # random effects
+y ~ .  # all other variables
+y ~ . - x42  # all other variables except x42
+~x1 + x2  # no response 
+y1 + y2 ~ x1  # multiple response 
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-13" style="background:;">
+  <hgroup>
+    <h2><code>summary</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">lm.fit &lt;- lm(rating ~ Action + Animation + Comedy + Drama + Documentary + Romance, 
+    data = mv)
+summary(lm.fit)
+</code></pre>
+
+<div style='text-align: left;'>
+    <img height='400' src='backgrounds/summary_lm.png' />
+</div>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-14" style="background:;">
+  <hgroup>
+    <h2>List of modelling packages I use(d) a lot</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li><code>glmnet</code></li>
+<li><code>LiblineaR</code></li>
+<li><code>e1071</code></li>
+<li><code>randomForest</code></li>
+<li><code>plm</code></li>
+<li><code>quantreg</code></li>
+<li><code>nlme</code></li>
+<li><code>sem</code></li>
+<li><code>systemfit</code></li>
+<li><code>forecast</code></li>
+<li><code>vars</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="part2-slide" id="slide-15" style="background:;">
+  <hgroup>
+    <h2>Tools</h2>
+  </hgroup>
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-16" style="background:;">
+  <hgroup>
+    <h2>Classics</h2>
+  </hgroup>
+  <article data-timings="">
+    <p><code>lapply</code>, <code>sapply</code>, <code>apply</code>, <code>tapply</code>, <code>mapply</code>, <code>replicate</code> </p>
+
+<pre><code class="r">lapply(l, length)[1]
+</code></pre>
+
+<pre><code>## [[1]]
+## [1] 9
+</code></pre>
+
+<pre><code class="r">sapply(l, length)
+</code></pre>
+
+<pre><code>## [1] 9 9 9 2
+</code></pre>
+
+<pre><code class="r">apply(m, 2, function(x) x[1]/max(x))
+</code></pre>
+
+<pre><code>## [1] 0.9967 0.9967 0.9967
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-17" style="background:;">
+  <hgroup>
+    <h2>Lets make some &quot;data&quot;</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">df &lt;- data.frame(city = c(&quot;New York&quot;, &quot;Vievis&quot;), `2013` = c(1000, 130), `2014` = c(1400, 
+    150), check.names = F, stringsAsFactors = F)
+library(xtable)
+print(xtable(df), type = &quot;html&quot;)
+</code></pre>
+
+<!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+
+<!-- Sat Apr 12 13:16:59 2014 -->
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> city </TH> <TH> 2013 </TH> <TH> 2014 </TH>  </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1000.00 </TD> <TD align="right"> 1400.00 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> Vievis </TD> <TD align="right"> 130.00 </TD> <TD align="right"> 150.00 </TD> </TR>
+   </TABLE>
+
+<pre><code class="r">options(xtable.type = &quot;html&quot;)
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-18" style="background:;">
+  <hgroup>
+    <h2>Melt &amp; Cast</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(reshape)
+mf &lt;- melt(df, id = 1)
+xtable(mf)
+</code></pre>
+
+<!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+
+<!-- Sat Apr 12 12:26:02 2014 -->
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> city </TH> <TH> variable </TH> <TH> value </TH>  </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD> 2013 </TD> <TD align="right"> 1000.00 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> Vievis </TD> <TD> 2013 </TD> <TD align="right"> 130.00 </TD> </TR>
+  <TR> <TD align="right"> 3 </TD> <TD> New York </TD> <TD> 2014 </TD> <TD align="right"> 1400.00 </TD> </TR>
+  <TR> <TD align="right"> 4 </TD> <TD> Vievis </TD> <TD> 2014 </TD> <TD align="right"> 150.00 </TD> </TR>
+   </TABLE>
+
+<pre><code class="r">cmf &lt;- cast(mf, city ~ variable)
+xtable(cmf)
+</code></pre>
+
+<!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+
+<!-- Sat Apr 12 12:26:02 2014 -->
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> city </TH> <TH> 2013 </TH> <TH> 2014 </TH>  </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1000.00 </TD> <TD align="right"> 1400.00 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> Vievis </TD> <TD align="right"> 130.00 </TD> <TD align="right"> 150.00 </TD> </TR>
+   </TABLE>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-19" style="background:;">
+  <hgroup>
+    <h2><code>plyr</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <h4>split-apply-combine</h4>
+
+<p>  </br> 
+</p>
+
+<pre><code class="r">library(plyr)
+smf &lt;- ddply(mf, &quot;city&quot;, summarize, maxval = max(value))
+xtable(smf)
+</code></pre>
+
+<!-- html table generated in R 3.0.3 by xtable 1.7-3 package -->
+
+<!-- Sat Apr 12 13:16:59 2014 -->
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> city </TH> <TH> maxval </TH>  </TR>
+  <TR> <TD align="right"> 1 </TD> <TD> New York </TD> <TD align="right"> 1400.00 </TD> </TR>
+  <TR> <TD align="right"> 2 </TD> <TD> Vievis </TD> <TD align="right"> 150.00 </TD> </TR>
+   </TABLE>
+
+<p>  </br> 
+</p>
+
+<p><code>ddply, llply, dlply, ldply, daply, adply, mdply, d_ply, ...</code></p>
+
+<p>tutorials -&gt; <a href="http://plyr.had.co.nz/09-u">http://plyr.had.co.nz/09-u</a>,<br>
+check out <a href="http://blog.rstudio.org/2014/01/17/introducing-dplyr/">http://blog.rstudio.org/2014/01/17/introducing-dplyr/</a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-20" style="background:;">
+  <hgroup>
+    <h2>%Parallel% <code>foreach</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">
+library(doParallel)
+cl = makeCluster(4)
+registerDoParallel(cl)
+library(foreach)
+out &lt;- foreach(file = list.files(), .combine = rbind) %dopar% {
+    # %do%
+    d &lt;- fread(file)
+    subset(d, year &gt; 2010)
+}
+stopCluster(cl)
+</code></pre>
+
+<ul>
+<li>find out more in this <a href="http://www.r-bloggers.com/the-wonders-of-foreach/">blog post</a></li>
+<li>or <a href="http://cran.r-project.org/web/packages/foreach/vignettes/foreach.pdf">vignette</a></li>
+<li>or <code>vignette(&quot;foreach&quot;)</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-21" style="background:;">
+  <hgroup>
+    <h2>Using C functions</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(devtools)  #install Rtools for this to work (on Windows)
+library(Rcpp)
+</code></pre>
+
+<pre><code>cppFunction(
+  &#39;int fibonacci(const int x) {
+     if (x == 0) return(0); 
+     if (x == 1) return(1);
+     return (fibonacci(x - 1)) + fibonacci(x - 2);
+}&#39;)
+</code></pre>
+
+<pre><code class="r">sapply(1:10, fibonacci)
+</code></pre>
+
+<pre><code>##  [1]  1  1  2  3  5  8 13 21 34 55
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-22" style="background:;">
+  <hgroup>
+    <h2><code>data.table</code></h2>
+  </hgroup>
+  <article data-timings="">
+    <p>inherits from <code>data.frame</code>. It offers fast subset, fast grouping, fast update, fast ordered joins and list columns in a short and flexible syntax, for faster development.</p>
+
+<pre><code class="r">library(data.table)
+fread(input, sep=&quot;auto&quot;, sep2=&quot;auto&quot;, nrows=-1L, header=&quot;auto&quot;, na.strings=&quot;NA&quot;,
+stringsAsFactors=FALSE, verbose=FALSE, autostart=30L, skip=-1L, select=NULL,
+drop=NULL, colClasses=NULL,
+integer64=getOption(&quot;datatable.integer64&quot;),         # default: &quot;integer64&quot;
+showProgress=getOption(&quot;datatable.showProgress&quot;)    # default: TRUE
+)
+</code></pre>
+
+<h3>More info</h3>
+
+<ul>
+<li> <a href="http://127.0.0.1:47900/help/library/data.table/doc/datatable-intro.pdf">introduction</a></li>
+<li><a href="http://127.0.0.1:47900/help/library/data.table/doc/datatable-faq.pdf">faq</a></li>
+<li><a href="http://127.0.0.1:47900/help/library/data.table/doc/datatable-timings.pdf">performance</a></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-23" style="background:;">
+  <hgroup>
+    <h2>Example: AWS EC2 instance spot prices</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">library(jsonlite)
+library(stringr)
+library(lubridate)
+cc2json &lt;- system(&quot;aws ec2 describe-spot-price-history --instance-types m1.medium&quot;, 
+    intern = T)
+d &lt;- fromJSON(cc2json)[[1]]  #usually d &lt;- read.csv(filename)
+d$Timestamp &lt;- gsub(&quot;T|\\.000Z&quot;, &quot; &quot;, d$Timestamp)
+d$Timestamp &lt;- str_trim(d$Timestamp)
+d$Timestamp &lt;- parse_date_time(d$Timestamp, &quot;%Y-%m-%d %H:%M:%S&quot;)
+d$SpotPrice &lt;- as.numeric(d$SpotPrice)
+d &lt;- subset(d, !grepl(&quot;Windows&quot;, ProductDescription))
+</code></pre>
+
+<ul>
+<li><code>jsonlite</code> - parse jsons - <code>fromJSON</code></li>
+<li><code>stringr</code> - string munging functions - <code>str_trim</code></li>
+<li><code>lubridate</code> - parse date and time - <code>parse_date_time</code></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-24" style="background:;">
+  <hgroup>
+    <h2>And result</h2>
+  </hgroup>
+  <article data-timings="">
+    <pre><code class="r">qplot(x = Timestamp, y = SpotPrice, data = d, geom = &quot;step&quot;) + facet_grid(ProductDescription ~ 
+    AvailabilityZone, scales = &quot;free&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-21.png" alt="plot of chunk unnamed-chunk-21"> </p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-25" style="background:;">
+  <article data-timings="">
+    <pre><code class="r">heart &lt;- function(t) {
+    data.frame(x = 16 * sin(t)^3, y = 13 * cos(t) - 5 * cos(2 * t) - 2 * cos(3 * 
+        t) - cos(4 * t))
+}
+qplot(data = heart(seq(0, 2 * pi, length = 100)), x = x, y = y, geom = &quot;polygon&quot;)
+</code></pre>
+
+<p><img src="figure/unnamed-chunk-22.png" alt="plot of chunk unnamed-chunk-22"> </p>
+
+<h2>Thank you!</h2>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Why R?'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='What is R?'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Main data types'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Some general stuff'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='R and others'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Install'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='RStudio'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='Graphs'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Two things you should know'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='I don&#39;t like how it looks...'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Modeling'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Formulae'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='<code>summary</code>'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='List of modelling packages I use(d) a lot'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Tools'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Classics'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Lets make some &quot;data&quot;'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Melt &amp; Cast'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title='<code>plyr</code>'>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='%Parallel% <code>foreach</code>'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Using C functions'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='<code>data.table</code>'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title='Example: AWS EC2 instance spot prices'>
+         23
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=24 title='And result'>
+         24
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=25 title=''>
+         25
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript">    
+    MathJax.Hub.Config({    
+      extensions: ["tex2jax.js"],    
+      "HTML-CSS": { scale: 100}    
+    });    
+  </script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>

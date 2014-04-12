@@ -1,0 +1,11 @@
+base
+ggplot2
+ggthemes
+gridBase
+jsonlite
+knitr
+lubridate
+plyr
+reshape
+stringr
+xtable
