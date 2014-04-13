@@ -61,6 +61,7 @@ l <- list(a, b, m, df)
 * good place to catch up http://www.r-bloggers.com
 * case study/introduction book "Machine Learning for Hackers" By Drew Conway, John Myles White
 * general book "The Art of R Programming" by Norman Matloff
+* computing for data analysis by Roger D. Peng https://www.coursera.org/course/compdata
 * data analysis course by Jeff Leek https://www.coursera.org/course/dataanalysis
 * statistical learning course by Trevor Hastie & Robert Tibshirani  
 http://online.stanford.edu/course/statistical-learning-winter-2014
